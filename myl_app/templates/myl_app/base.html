@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>LICORERA M Y L</title>
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <nav class="navbar navbar-toggler navbar-fixed-top" style="background-color: #fff;">
+            <a class="navbar-brand ml-5" href="{% url 'inicio' %}" style=" color: black;"><img src="{% static 'myl_app/img/logo_oficial.png' %}" alt="" width="80px" height="65px"></a>
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                
+            </button>
+            <div class="container col-md-10 ">
+                <div class="col-6 col-xs-12">
+                    <input type="search " class="form-control " style="border-radius: 50px; " placeholder="Buscar Producto" />
+                </div>
+
+                <div class="container col-md-auto col-xs-8 ">
+                    <form class="form-inline ">
+                        <button class=" btn btn-success btn-lg " type="submit" style="border-radius: 50px; border-color: #fff; background-color: #fff; font-size:small ;color:#28a745; font-weight: bold; font-family:Verdana, Geneva, Tahoma, sans-serif; ">Registrarme</button>
+                    </form>
+                    <form class="form-inline ">
+                        <button class=" btn btn-success btn-lg " type="submit" style="font-size: small; color: white; border-radius: 50px; ">lniciar  Sesión</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="sidebar">
+            <a class="nav-link "><span class="sr-only ">(current)</span></a>
+
+            <button id="boton" class=" container col-1 col-md-12 navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item {% if request.path == '/catalogo/' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'catalogo' %}">Catalogo <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item {% if request.path == '/promociones/' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'promociones' %}">Promociones <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categorias
+                  </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Licor</a>
+                            <a class="dropdown-item" href="#">Abarrotes</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Cuidado Personal</a>
+                        </div>
+                    </li>
+                    <li class="nav-item {% if request.path == '/contactanos/' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'contactanos' %}">Contactanos</a>
+                    </li>
+                    <li class="nav-item {% if request.path == '/sucursales/' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'sucursales' %}">Nuestras Sucursales</a>
+                    </li>
+                    <li class="nav-item {% if request.path == '/ayuda/' %}active{% endif %}">
+                        <a class="nav-link " href="{% url 'ayuda' %}">Ayuda</a>
+                    </li>
+                </ul>
+                <!-- <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> -->
+            </div>
+        </nav>
+        <br> {% block content %} {% endblock content %}
+
+    </div>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #ebeff3;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js "></script>
+    <style>
+        @media only screen and (max-width: 600px) {
+            body {
+                background-color: lightblue;
+            }
+            #boton {
+                margin: 0;
+                padding: 0;
+                left: -350px;
+            }
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-sm navbar-fixed-top offset-1 ">
+    <button class="navbar-toggler d-lg-none" style="background-color: rgb(5, 146, 146);" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+
+    <div class="collapse navbar-collapse " id="collapsibleNavId ">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
+            <li class="nav-item active ">
+                <a class="nav-link " href="{% url 'catalogo' %} " style=" color: black; ">Catalogo <span class="sr-only ">(current)</span></a>
+            </li>
+            <li class="nav-item active ">
+                <a class="nav-link " href="{% url 'ayuda' %} " style=" color: black; ">Ayuda <span class="sr-only ">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " href="{% url 'promociones' %} " style=" color: black; ">Promociones</a>
+            </li>
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle " href="{% url 'contactanos' %} " id="dropdownId " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false " style=" color: black; ">Contactanos</a>
+                <div class="dropdown-menu " aria-labelledby="dropdownId ">
+                    <a class="dropdown-item " href="{% url 'contactanos' %} ">Whatsapp<i class="fab fa-whatsapp-square fa-xs fa-fw "></i></a>
+                    <a class="dropdown-item " href="# ">Facebook<i class="fa fa-facebook-official " aria-hidden="true "></i></a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</nav>
